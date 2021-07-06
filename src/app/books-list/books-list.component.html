@@ -1,0 +1,65 @@
+<div style="text-align:center">
+  <h1>
+    Books
+  </h1>
+
+</div>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+<header>
+  
+  <main>
+
+    
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <!-- retrive the array from defined data.ts using ngfor -->
+          <div class="col" *ngFor="let item of booksData">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                  dy=".3em">Thumbnail</text>
+              </svg>
+
+              <div class="card-body">
+                <span><strong>Book Name :{{item.name | uppercase}}</strong></span>
+                <br>
+                <span><strong>Author :{{item.author | titlecase }}</strong></span>
+                <br>
+                <span><strong>Description :</strong> </span>
+                <p class="card-text">{{item.description}}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <star-rating [value]="item.rating" [totalstars]=5 checkedcolor="red" uncheckedcolor="black" size="24px"
+                      [readonly]="false" (rate)="onRate($event)"></star-rating>
+
+                  </div>
+<!-- 
+                  <small class="text-muted">9 mins</small> -->
+                </div>
+                <small>Publish Date :{{item.publish_date | date }}</small> 
+                <!-- Above i've used pipes to show uppercase,date and title case -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="text-muted py-5">
+    <div class="container">
+      <p class="float-end mb-1">
+        <a href="#">Back to top</a>
+      </p>
+      <p class="mb-1">Books Rating Site &copy; Rate the Book</p>
+     
+    </div>
+  </footer>
