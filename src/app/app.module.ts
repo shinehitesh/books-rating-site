@@ -7,15 +7,21 @@ import { AppComponent } from './app.component';
 
 import { RatingModule } from 'ng-starrating';
 import { BooksListComponent } from './books-list/books-list.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { PostsComponent } from './posts/posts.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    BooksListComponent
+    BooksListComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     RatingModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

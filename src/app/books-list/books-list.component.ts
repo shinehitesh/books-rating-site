@@ -11,6 +11,7 @@ export class BooksListComponent implements OnInit {
   booksData: any
   constructor() {
     this.booksData = Books  //i've used static data to fetch books data please check data.ts
+    console.log(this.booksData)
   }
 
   ngOnInit(): void {
